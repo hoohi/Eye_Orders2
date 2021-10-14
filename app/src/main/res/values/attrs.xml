@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorActive" format="reference"/>
+
+    <declare-styleable name="CheckableImageView">
+        <attr name="android:button" format="reference" />
+        <attr name="civ_buttonTint" format="reference" />
+        <attr name="android:checked" format="boolean" />
+    </declare-styleable>
+</resources>

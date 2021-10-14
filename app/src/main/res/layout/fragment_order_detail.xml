@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorSurface"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/title_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/decline_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="#23 - 0002593" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/decline_button"
+                    style="@style/Widget.App.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/decline_order_btn"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    android:textColor="?colorPrimary"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title_text_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/details_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/order_number_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:textAppearance="@style/TextAppearance.App.H1"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Order #23" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/customer_name_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="start|center"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    app:drawableStartCompat="@drawable/ic_person"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/order_number_text_view"
+                    tools:text="@tools:sample/full_names" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/customer_zone_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="start|center"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    app:drawableStartCompat="@drawable/ic_pin"
+                    app:layout_constraintEnd_toStartOf="@id/customer_phone_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/customer_name_text_view"
+                    tools:text="@tools:sample/cities" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/customer_phone_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="start|center"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    app:drawableStartCompat="@drawable/ic_phone"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@id/customer_zone_text_view"
+                    app:layout_constraintTop_toBottomOf="@id/customer_name_text_view"
+                    tools:text="@tools:sample/us_phones" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/customer_info_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="customer_zone_text_view,customer_phone_text_view" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:cardBackgroundColor="@color/gray_50"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/customer_info_barrier">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/item_order_detail" />
+
+
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="?dividerHorizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/recycler_view" />
+
+                        <TextView
+                            android:id="@+id/notes_text_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="20dp"
+                            android:textAppearance="@style/TextAppearance.App.Strong2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                            app:layout_constraintTop_toBottomOf="@id/divider"
+                            tools:text="* My Home is in the Second floor of Al Nahdha Building *" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.03" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.97" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/subtotal_label_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/order_detail_subtotal"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintEnd_toStartOf="@id/subtotal_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/card" />
+
+                <TextView
+                    android:id="@+id/subtotal_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Strong"
+                    app:layout_constraintBottom_toBottomOf="@id/subtotal_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/subtotal_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/subtotal_label_text_view"
+                    tools:text="7.800 OMR" />
+
+
+                <TextView
+                    android:id="@+id/tasleem_discount_label_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/order_detail_tasleem_discount"
+                    android:textAppearance="@style/TextAppearance.App.H5"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@id/tasleem_discount_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/subtotal_label_text_view"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tasleem_discount_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Strong2"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tasleem_discount_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/tasleem_discount_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/tasleem_discount_label_text_view"
+                    tools:text="0.100 OMR"
+                    tools:visibility="visible" />
+
+
+                <TextView
+                    android:id="@+id/vendor_discount_label_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/order_detail_vendor_discount"
+                    android:textAppearance="@style/TextAppearance.App.H5"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@id/tasleem_discount_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/tasleem_discount_label_text_view"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/vendor_discount_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Strong2"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/vendor_discount_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/vendor_discount_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/vendor_discount_label_text_view"
+                    tools:text="0.100 OMR"
+                    tools:visibility="visible" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tax_recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:text="@string/order_detail_taxes"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/vendor_discount_label_text_view"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_tax"
+                    tools:visibility="visible" />
+
+
+                <TextView
+                    android:id="@+id/delivery_fee_label_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/order_detail_service_fee"
+                    android:textAppearance="@style/TextAppearance.App.H5"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@id/delivery_fee_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/tax_recycler_view"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/delivery_fee_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Strong2"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/delivery_fee_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/delivery_fee_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/delivery_fee_label_text_view"
+                    tools:text="0.200 OMR"
+                    tools:visibility="visible" />
+
+
+                <include layout="@layout/guidelines" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <TextView
+        android:id="@+id/details_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/order_detail_message_option_accept"
+        android:textAppearance="@style/TextAppearance.App.Strong2"
+        android:textColor="@color/pink"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/details_button"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        tools:visibility="visible" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/details_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        android:text="@string/order_detail_btn_option_accept"
+        android:visibility="gone"
+        app:backgroundTint="@color/pink"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        tools:visibility="visible" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/detail_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="details_text_view,details_button" />
+
+    <include layout="@layout/guidelines" />
+</androidx.constraintlayout.widget.ConstraintLayout>

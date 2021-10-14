@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?actionBarSize"
+            android:gravity="center"
+            android:text="@string/restaurant_open_title"
+            android:textAppearance="@style/TextAppearance.App.H3"
+            app:layout_constraintBottom_toTopOf="@id/message_text_view"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <TextView
+            android:id="@+id/message_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/restaurant_open_msg"
+            app:layout_constraintBottom_toTopOf="@id/open_card"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/title_text_view" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/open_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?actionBarSize"
+            app:layout_constraintBottom_toTopOf="@id/busy_card"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/message_text_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/open_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/open_image"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_menu_mgmt" />
+
+                <TextView
+                    android:id="@+id/open_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_open_option_title"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintEnd_toStartOf="@id/open_check"
+                    app:layout_constraintStart_toEndOf="@id/open_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/open_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_open_option_subtitle"
+                    app:layout_constraintEnd_toStartOf="@id/open_check"
+                    app:layout_constraintStart_toEndOf="@id/open_image"
+                    app:layout_constraintTop_toBottomOf="@id/open_title" />
+
+
+                <com.eyeorders.util.customview.CheckableImageView
+                    android:id="@+id/open_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/button_check"
+                    android:checked="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/busy_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/open_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/busy_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/busy_image"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_busy" />
+
+                <TextView
+                    android:id="@+id/busy_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_busy_option_title"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintEnd_toStartOf="@id/busy_check"
+                    app:layout_constraintStart_toEndOf="@id/busy_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/busy_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_busy_option_subtitle"
+                    app:layout_constraintEnd_toStartOf="@id/busy_check"
+                    app:layout_constraintStart_toEndOf="@id/busy_image"
+                    app:layout_constraintTop_toBottomOf="@id/busy_title" />
+
+
+                <com.eyeorders.util.customview.CheckableImageView
+                    android:id="@+id/busy_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/button_check"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/close_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/busy_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/close_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/close_image"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_close" />
+
+                <TextView
+                    android:id="@+id/close_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_close_option_title"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintEnd_toStartOf="@id/close_check"
+                    app:layout_constraintStart_toEndOf="@id/close_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/close_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/restaurant_close_option_subtitle"
+                    app:layout_constraintEnd_toStartOf="@id/close_check"
+                    app:layout_constraintStart_toEndOf="@id/close_image"
+                    app:layout_constraintTop_toBottomOf="@id/close_title" />
+
+
+                <com.eyeorders.util.customview.CheckableImageView
+                    android:id="@+id/close_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/button_check"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+        <include layout="@layout/guidelines" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

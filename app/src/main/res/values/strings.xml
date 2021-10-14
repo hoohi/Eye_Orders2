@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">Eye Orders</string>
+    <string name="akel_al_mama">Akel Al Mama</string>
+    <string name="title_active_orders">Active Orders</string>
+    <string name="title_menu_management">Menu Management</string>
+    <string name="title_recent_orders">Recent Orders</string>
+    <string name="title_test_connection">Test Connection</string>
+    <string name="title_help_and_support"><![CDATA[Help & Support]]></string>
+    <string name="lang_english">English</string>
+    <string name="lang_arabic">Arabic</string>
+    <string name="state_open">Open</string>
+    <string name="version_prefix">v%s</string>
+    <string name="today">Today</string>
+    <string name="past">Past</string>
+    <string name="orders_label">%s orders</string>
+    <string name="powered_by_label">Empowered by\nTasleem Service %s</string>
+    <string name="log_in">Log in</string>
+    <string name="password_label">Password</string>
+    <string name="email_address_label">Email address</string>
+
+    <string name="connect_exception">Could not connect to the server. Please check your
+        internet connection and try again.
+    </string>
+    <string name="unknown_host_exception">Could not connect to the server.
+        Please check your internet connection
+    </string>
+    <string name="timed_out_exception">Request timed out while trying to connect.
+        Please ensure you have a strong signal and try again.
+    </string>
+    <string name="unknown_exception">An unexpected error has occurred. Try
+        again and contact the administrator
+    </string>
+    <string name="email_required_msg">Email is required</string>
+    <string name="email_valid_required_msg">A valid email is required</string>
+    <string name="password_required_msg">Password is required</string>
+    <string name="login_server_error_msg">Incorrect email or password</string>
+    <string name="ready_for_delivery">READY</string>
+    <string name="product_available_text">Available</string>
+    <string name="product_unavailable_text">Not on</string>
+    <string name="restaurant_open_title">Your restaurant is open</string>
+    <string name="restaurant_closed_title">Your restaurant is closed</string>
+    <string name="restaurant_open_msg">…and ready to take orders</string>
+    <string name="restaurant_closed_msg">…please open it to take orders</string>
+    <string name="amount_currency">%s OMR</string>
+    <string name="loading">Loading…</string>
+    <string name="store_open_status_text">Open</string>
+    <string name="store_closed_status_text">Closed</string>
+    <string name="update_store_state_failed_msg">Failed to update store status</string>
+    <string name="order_number_label" translatable="false">#%s</string>
+    <string name="retry_text">Reload</string>
+    <string name="accepted_orders_empty_msg">No accepted orders now, reload or try again later</string>
+    <string name="menu_empty_msg">No menu products now, swipe down to reload or try again later</string>
+
+    <string name="new_orders_empty_msg">New orders will appear soon</string>
+    <string name="restaurant_busy_msg">…with many orders</string>
+    <string name="restaurant_busy_title">Your restaurant is busy</string>
+    <string name="store_busy_status_text">Busy</string>
+    <string name="restaurant_open_option_title">Open</string>
+    <string name="restaurant_open_option_subtitle">Open for the rest of the day</string>
+    <string name="restaurant_busy_option_title">Busy</string>
+    <string name="restaurant_busy_option_subtitle">Stay busy for the rest of the day</string>
+    <string name="restaurant_close_option_title">Close</string>
+    <string name="restaurant_close_option_subtitle">Close for the rest of the day</string>
+
+    <string name="product_available_title">%1$s is available</string>
+    <string name="product_available_msg">…update if it now no longer available</string>
+    <string name="product_unavailable_title">%1$s is unavailable</string>
+    <string name="product_unavailable_msg">…update if it now available</string>
+    <string name="empty_orders_today">No orders today, reload to try again</string>
+    <string name="empty_orders_past">No orders, select dates above</string>
+    <string name="recent_orders_header">All - %1$s (%2$s - %3$s)</string>
+    <string name="recent_orders_header_empty">All - 0</string>
+    <string name="title_logout">Log out</string>
+    <string name="order_detail_btn_option_ready">Mark as ready</string>
+    <string name="order_detail_message_option_ready">Mark as ready if the food is ready to be delivered</string>
+    <string name="order_detail_message_option_done">Marked food as ready</string>
+    <string name="order_detail_message_option_cancelled">The order was cancelled</string>
+    <string name="order_detail_message_option_vendor_cancelled">You cancelled the order</string>
+    <string name="order_detail_btn_option_accept">Accept</string>
+    <string name="order_detail_message_option_accept">Click the button below to accept this order</string>
+    <string name="order_detail_menu_option_print">Print</string>
+    <string name="test_connection_loading_msg">Checking your connection, please wait…</string>
+    <string name="test_connection_fail_msg">Your device is not connected. Please connect it</string>
+    <string name="test_connection_success_msg">Your device is connected</string>
+    <string name="test_connection_slow_msg">Your device is connected, but the connection appears to be slow</string>
+    <string name="test_connection_cancel">Cancel</string>
+    <string name="test_connection_retry">Retry</string>
+    <string name="order_detail_order_label">#Order %s</string>
+    <string name="order_detail_order_title"># %1$s - %2$s</string>
+    <string name="menu_mgmt_update_availability_success_msg">Successfully updated product status</string>
+    <string name="menu_mgmt_update_availability_fail_msg">Failed to update product status because: %s</string>
+    <string name="new_order_notification_items">%1$s (%2$s items)</string>
+    <string name="new_order_items">%s items</string>
+    <string name="new_order_notification_title">You have a new order!</string>
+    <string name="new_order_notification_msg">%s sent you a new order</string>
+    <string name="new_order_notification_msg_tasleem">Tasleem app sent you a new order</string>
+
+    <string name="none_paired">None Paired Devices</string>
+    <string name="device_not_supported">Bluetooth is not supported</string>
+    <string name="toast_2">The service has been disconnected!</string>
+    <string name="toast_3">Bluetooth device is unavailable</string>
+    <string name="toast_4">Bluetooth device not detected. Please open Bluetooth!</string>
+    <string name="toast_5">Not Found InnterPrinter!</string>
+    <string name="toast_6">Bluetooth connect failed!</string>
+    <string name="tax_text">%1$s(%2$s%%)</string>
+    <string name="printer_order_num_label">Order#</string>
+    <string name="printer_customer_label">Customer</string>
+    <string name="print_success_msg">Printed successfully</string>
+    <string name="printer_disconnected_msg">Printer is disconnected</string>
+    <string name="printer_error_msg">An error occurred while printing</string>
+    <string name="order_option_label">+ %s</string>
+    <string name="order_addon_label">+ %s</string>
+    <string name="order_exclude_label">- %s</string>
+    <string name="order_count_label">%s x</string>
+    <string name="printer_order_count_label">%sx</string>
+    <string name="decline_order_btn">Decline</string>
+    <string name="overlay_permission_msg">Allow the app to draw over other apps to alert you when new orders come in</string>
+    <string name="overlay_permission_title">Allow</string>
+    <string name="exit_app">Exit</string>
+    <string name="connection_type">Connected to %s</string>
+    <string name="internet_disconnected_msg">Please connect your device to the internet</string>
+    <string name="overlay_permission_granted_msg">Granted</string>
+    <string name="change_product_availability">Change product availability</string>
+    <string name="product_availability_available">Available</string>
+    <string name="product_availability_available_msg">Set product as available</string>
+    <string name="product_availability_unavailable">Not Available</string>
+    <string name="product_availability_unavailable_msg">Set product as unavailable</string>
+    <string name="order_title_nnew">New</string>
+    <string name="order_title_accepted">Accepted</string>
+    <string name="new_order_popup_title">New Order</string>
+    <string name="new_order_popup_msg">Tap anywhere to accept</string>
+    <string name="completed_orders_title">Completed orders</string>
+    <string name="cancelled_orders_title">Cancelled orders</string>
+    <string name="order_detail_subtotal">Subtotal</string>
+    <string name="order_detail_tasleem_discount">Tasleem Discount</string>
+    <string name="order_detail_vendor_discount">Vendor Discount</string>
+    <string name="order_detail_taxes">Taxes</string>
+    <string name="order_detail_service_fee">Service Fee</string>
+    <string name="past_orders_cancel">Cancel</string>
+    <string name="past_orders_start_date">Start Date</string>
+    <string name="past_orders_select_date">Select date</string>
+    <string name="past_orders_end_date">End Date</string>
+    <string name="past_orders_change_selection">Change Selection</string>
+    <string name="past_orders_completed_orders">Completed orders</string>
+    <string name="past_orders_cancelled_orders">Cancelled orders</string>
+    <string name="view_order_action">View Order</string>
+    <string name="printer_subtotal">SubTotal</string>
+    <string name="printer_total">Total</string>
+    <string name="printer_service_fee">Service Fee</string>
+    <string name="printer_vat_incl">VAT(Incl.)</string>
+    <string name="title_work_hours">Work hours</string>
+    <string name="empty_work_hours">No work hours set</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="work_hours_start_end">%1$s-%2$s</string>
+    <string name="notification_text">App is running</string>
+    <string name="service_notification_channel_desc">Checking for new orders</string>
+    <string name="item_id_label">%1$s - %2$s items</string>
+    <string name="support_subtitle"><![CDATA[For support & technical solutions]]></string>
+    <string name="support_phone_text">%s OR Whatsapp</string>
+    <string name="send_email_hint">Send with…</string>
+    <string name="dial_phone_hint">Dial with…</string>
+
+    <string name="printer_is_working">Printer is working</string>
+    <string name="out_of_paper">Out of Paper</string>
+    <string name="exists_paper">Papers Available</string>
+    <string name="printer_high_temp_alarm">Printer temperature is high</string>
+    <string name="motor_high_temp_alarm">Motor temperature is high</string>
+    <string name="printer_current_task_print_complete">Printing Completed</string>
+
+    <string name="get_BluetoothAdapter_fail">Please Open Bluetooth</string>
+    <string name="get_BluetoothPrinterDevice_fail">Please Make Sure Bluetooth have IposPrinter</string>
+    <string name="get_BluetoothPrinterDevice_success">Bluetooth Printer Driver is loading success!</string>
+
+    <string name="support_phone" translatable="false">+968 92151880</string>
+    <string name="support_email" translatable="false">info@tasleem.in</string>
+</resources>

@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">Eye Orders</string>
+    <string name="akel_al_mama">Akel Al Mama</string>
+    <string name="title_active_orders">طلبات قادمة</string>
+    <string name="title_menu_management">إدارة المنتجات</string>
+    <string name="title_recent_orders">طلبات سابقة</string>
+    <string name="title_test_connection">تجربة الإتصال</string>
+    <string name="title_help_and_support">
+		<![CDATA[المساعدة و الدعم]]>
+	</string>
+    <string name="lang_english">الإنجليزية</string>
+    <string name="lang_arabic">العربية</string>
+    <string name="state_open">مفتوح</string>
+    <string name="version_prefix">v%s</string>
+    <string name="today">اليوم</string>
+    <string name="past">سابقة</string>
+    <string name="orders_label">%s orders</string>
+    <string name="powered_by_label">متاح لخدمات تسليم %s</string>
+    <string name="log_in">تسجيل الدخول</string>
+    <string name="password_label">كلمة المرور</string>
+    <string name="email_address_label">البريد الالكتروني</string>
+    <string name="connect_exception">لا يمكن الإتصال بالخادم ، يرجى معاودة الاتصال
+</string>
+    <string name="unknown_host_exception">الإتصال بالخادم ، يرجى معاودة الاتصال
+</string>
+    <string name="timed_out_exception">لا يمكن الاتصال بالخادم، الرجاء التأكد قوة الاشارة و المحاولة مجدداً
+</string>
+    <string name="unknown_exception">حدث خطأ ، يرجى التواصل مع مزود الخدمة
+</string>
+    <string name="email_required_msg">أدخل البريد الإلكتروني</string>
+    <string name="email_valid_required_msg">البريد الإلكتروني غير صحيح</string>
+    <string name="password_required_msg">أدخل كلمة المرور</string>
+    <string name="login_server_error_msg">بيانات الدخول غير صحيحه</string>
+    <string name="ready_for_delivery">جاهز للتوصيل</string>
+    <string name="product_available_text">متوفر</string>
+    <string name="product_unavailable_text">غير متوفر</string>
+    <string name="restaurant_open_title">المحل مفتوح الآن</string>
+    <string name="restaurant_closed_title">المحل مغلق الآن</string>
+    <string name="restaurant_open_msg">…و جاهز لإستقبال الطلبيات</string>
+    <string name="restaurant_closed_msg">…الرجاء فتح المحل لإستقبال الطلبيات</string>
+    <string name="amount_currency">%s ر.ع</string>
+    <string name="loading">جاري تحميل…</string>
+    <string name="store_open_status_text">مفتوح</string>
+    <string name="store_closed_status_text">مغلق</string>
+    <string name="update_store_state_failed_msg">فشل تحديث الحالة</string>
+    <string name="order_number_label" translatable="false">#%s</string>
+    <string name="retry_text">إعادة تحميل</string>
+    <string name="accepted_orders_empty_msg">لا يوجد طلبيات مقبوله</string>
+    <string name="menu_empty_msg">لا يوجد منتجات الآن ، قم بلمس الشاشة إلى الأسفل لتحديث الصفحة</string>
+
+
+    <string name="new_orders_empty_msg">طلبات جديدة سوف تظهر قريبا</string>
+    <string name="restaurant_busy_msg">…مع العديد من الطلبات</string>
+    <string name="restaurant_busy_title">المتجر الخاص بك مشغول</string>
+    <string name="store_busy_status_text">مشغول</string>
+    <string name="restaurant_open_option_title">مفتوح</string>
+    <string name="restaurant_open_option_subtitle">مفتوح لبقية اليوم</string>
+    <string name="restaurant_busy_option_title">مشغول</string>
+    <string name="restaurant_busy_option_subtitle">مشغول لبقية اليوم</string>
+    <string name="restaurant_close_option_title">مغلق</string>
+    <string name="restaurant_close_option_subtitle">مغلق لباقية اليوم</string>
+
+    <string name="product_available_title">%1$s هو متاح</string>
+    <string name="product_available_msg">…تحديث إذا لم يعد متاحًا الآن</string>
+    <string name="product_unavailable_title">%1$s هو غير متاح</string>
+    <string name="product_unavailable_msg">…تحديث اذا هو متاحا الأن</string>
+    <string name="empty_orders_today">لا يوجد طلبات اليوم ، أعد التحميل للمحاولة مرة أخرى</string>
+    <string name="empty_orders_past">لا توجد طلبات ، حدد التواريخ من الأعلى</string>
+    <string name="recent_orders_header">كل - %1$s (%2$s - %3$s)</string>
+    <string name="recent_orders_header_empty">كل - 0</string>
+    <string name="title_logout">تسجيل الخروج</string>
+    <string name="order_detail_btn_option_ready">تم التحضير</string>
+    <string name="order_detail_message_option_ready">اضغط تم التحضير اذا كان الطعام جاهز للتسليم</string>
+    <string name="order_detail_message_option_done">تم تحضير الطعام</string>
+    <string name="order_detail_message_option_cancelled">تم إلغاء الطلب</string>
+    <string name="order_detail_message_option_vendor_cancelled">لقد ألغيت الطلب</string>
+    <string name="order_detail_btn_option_accept">قبول</string>
+    <string name="order_detail_message_option_accept">انقر فوق الزر أدناه لقبول هذا الطلب</string>
+    <string name="order_detail_menu_option_print">طباعة</string>
+    <string name="test_connection_loading_msg">جاري التحقق من الاتصال ، الرجاء الانتظار…</string>
+    <string name="test_connection_fail_msg">جهازك غير متصل. الرجاء توصيله</string>
+    <string name="test_connection_success_msg">جهازك متصل</string>
+    <string name="test_connection_slow_msg">جهازك متصل ، ولكن يبدو أن الاتصال بطيء</string>
+    <string name="test_connection_cancel">إلغاء</string>
+    <string name="test_connection_retry">أعد المحاولة</string>
+    <string name="order_detail_order_label">#طلب %s</string>
+    <string name="order_detail_order_title"># %1$s - %2$s</string>
+    <string name="menu_mgmt_update_availability_success_msg">نجحت تحديث حالة المنتج</string>
+    <string name="menu_mgmt_update_availability_fail_msg">فشل تحديث حالة المنتج بسبب : %s</string>
+    <string name="new_order_notification_items">%1$s (%2$s عناصر)</string>
+    <string name="new_order_items">%s عناصر</string>
+    <string name="new_order_notification_title">لديك طلب جديد!</string>
+    <string name="new_order_notification_msg">%s أرسل لك طلب جديد</string>
+    <string name="new_order_notification_msg_tasleem">أرسل لك تطبيق تسليم طلبًا جديدًا</string>
+
+    <string name="none_paired">الأجهزة غير مقترنة</string>
+    <string name="device_not_supported">البلوتوث غير مدعوم</string>
+    <string name="toast_2">تم فصل الخدمة!</string>
+    <string name="toast_3">جهاز البلوتوث غير متاح</string>
+    <string name="toast_4">لم يتم اكتشاف جهاز بلوتوث. الرجاء تفعيل البلوتوث!</string>
+    <string name="toast_5">لم يتم العثور على الطابعة!</string>
+    <string name="toast_6">فشل الإتصال بالبلوتوث!</string>
+    <string name="tax_text">%1$s(%2$s%%)</string>
+    <string name="printer_order_num_label">#طلب</string>
+    <string name="printer_customer_label">عميل</string>
+    <string name="print_success_msg">تمت الطباعة بنجاح</string>
+    <string name="printer_disconnected_msg">الطابعة غير متصلة</string>
+    <string name="printer_error_msg">حصل مشكلة عند محاولة الطباعة</string>
+    <string name="order_option_label">+ %s</string>
+    <string name="order_addon_label">+ %s</string>
+    <string name="order_exclude_label">- %s</string>
+    <string name="order_count_label">%s x</string>
+    <string name="printer_order_count_label">%sx</string>
+    <string name="decline_order_btn">رفض</string>
+    <string name="overlay_permission_msg">اسمح للتطبيق بظهور فوق التطبيقات الأخرى لتنبيهك عند وصول طلبات جديدة</string>
+    <string name="overlay_permission_title">سماح</string>
+    <string name="exit_app">الخروج</string>
+    <string name="connection_type">تم الإتصال فى %s</string>
+    <string name="internet_disconnected_msg">يرجى توصيل جهازك بالإنترنت</string>
+    <string name="overlay_permission_granted_msg">تم المنح</string>
+    <string name="change_product_availability">تغيير حالة المنتج</string>
+    <string name="product_availability_available">متاج</string>
+    <string name="product_availability_available_msg">تغير حالة المنتج لمتاح</string>
+    <string name="product_availability_unavailable">غير متاح</string>
+    <string name="product_availability_unavailable_msg">تغير حالة المنتج لغير متاح</string>
+    <string name="order_title_nnew">جديد</string>
+    <string name="order_title_accepted">مقبول</string>
+    <string name="new_order_popup_title">طلب جديد</string>
+    <string name="new_order_popup_msg">إضغط على أي مكان للقبول</string>
+    <string name="completed_orders_title">الطلبات المكتملة</string>
+    <string name="cancelled_orders_title">الطلبات الملغية</string>
+    <string name="order_detail_subtotal">المجموع الفرعي</string>
+    <string name="order_detail_tasleem_discount">خصم تسليم</string>
+    <string name="order_detail_vendor_discount">خصم المطعم</string>
+    <string name="order_detail_taxes">الضرائب</string>
+    <string name="order_detail_service_fee">رسوم الخدمة</string>
+    <string name="past_orders_cancel">إلغاء</string>
+    <string name="past_orders_start_date">تاريخ البداية</string>
+    <string name="past_orders_select_date">التاريخ المحدد</string>
+    <string name="past_orders_end_date">تاريخ النهاية</string>
+    <string name="past_orders_change_selection">تغيير التحديد</string>
+    <string name="past_orders_completed_orders">الطلبات المكتملة</string>
+    <string name="past_orders_cancelled_orders">الطلبات الملغية</string>
+    <string name="view_order_action">عرض الطلب</string>
+
+    <string name="printer_subtotal">المجموع الفرعي</string>
+    <string name="printer_total">المجموع</string>
+    <string name="printer_service_fee">رسوم الخدمة</string>
+    <string name="printer_vat_incl">ضريبة القيمة المضافة (بما في ذلك)</string>
+    <string name="title_work_hours">أوقات العمل</string>
+    <string name="empty_work_hours">لا يوجد أوقات عمل</string>
+    <string name="monday">الاثنين</string>
+    <string name="tuesday">الثلاثاء</string>
+    <string name="wednesday">الاربعاء</string>
+    <string name="thursday">الخميس</string>
+    <string name="friday">الجمعة</string>
+    <string name="saturday">السبت</string>
+    <string name="sunday">الأحد</string>
+    <string name="work_hours_start_end">%1$s-%2$s</string>
+    <string name="notification_text">متصل</string>
+    <string name="service_notification_channel_desc">التحقق من وجود طلبيات جديده</string>
+    <string name="item_id_label">%1$s - %2$s items</string>
+    <string name="support_subtitle"><![CDATA[للدعم و المساعدة الفنية]]></string>
+    <string name="support_phone_text">%s أو عبر الواتس آب</string>
+    <string name="send_email_hint"> أرسل عبر</string>
+    <string name="dial_phone_hint">اتصل عبر…</string>
+
+    <string name="printer_is_working">الطابعة متصلة</string>
+    <string name="out_of_paper">لا يوجد ورق طباعة</string>
+    <string name="exists_paper">الورق متوفر</string>
+    <string name="printer_high_temp_alarm">حرارة الطابعة مرتفعة</string>
+    <string name="motor_high_temp_alarm">مكينة الطباعة لا تعمل</string>
+    <string name="printer_current_task_print_complete">تم الطباعة بنجاح</string>
+    <string name="get_BluetoothAdapter_fail">الرجاء تشغيل البلوتوث</string>
+    <string name="get_BluetoothPrinterDevice_fail">الرجاء التأكد من توصيل الطابعة بالبلوتوث</string>
+    <string name="get_BluetoothPrinterDevice_success">تمت توصيل الطابعة بنجاح</string>
+
+
+</resources>

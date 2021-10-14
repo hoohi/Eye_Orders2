@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="nav_header_icon_size">100dp</dimen>
+
+    <dimen name="text_size_h1">24sp</dimen>
+    <dimen name="text_size_h2">22sp</dimen>
+    <dimen name="text_size_h3">20sp</dimen>
+    <dimen name="text_size_h4">18sp</dimen>
+    <dimen name="text_size_h5">16sp</dimen>
+    <dimen name="text_size_main">18sp</dimen>
+    <dimen name="text_size_strong2">16sp</dimen>
+
+    <dimen name="text_size_body">22sp</dimen>
+    <dimen name="nav_item_top_margin">32dp</dimen>
+    <dimen name="nav_item_margin">16dp</dimen>
+    <dimen name="nav_item_bottom_margin">36dp</dimen>
+    <dimen name="appbar_elevation">8dp</dimen>
+
+
+    <dimen name="new_orders_space">16dp</dimen>
+    <dimen name="accepted_orders_space">8dp</dimen>
+    <dimen name="menu_space">4dp</dimen>
+    <dimen name="button_loading_radius">10dp</dimen>
+    <dimen name="button_loading_stroke">2dp</dimen>
+
+    <dimen name="line_drawable_padding">8dp</dimen>
+    <dimen name="thumb_drawable_padding">16dp</dimen>
+    <dimen name="thumb_drawable_corners">32dp</dimen>
+</resources>

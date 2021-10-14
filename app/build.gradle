@@ -1,0 +1,177 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    signingConfigs {
+        release {
+            storeFile file("$rootDir/keystore.jks")
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.tasleem.orders"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation":
+                                      "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+        }
+
+        debug{
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+
+    implementation "androidx.core:core-ktx:1.3.2"
+
+    def coroutineVersion = "1.4.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
+
+    def appCompatVersion = "1.2.0"
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "androidx.vectordrawable:vectordrawable:1.1.0"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+
+    def lifeCycleVersion = '2.3.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifeCycleVersion"
+    implementation "androidx.lifecycle:lifecycle-service:$lifeCycleVersion"
+
+    def navVersion = "2.3.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+
+    implementation "com.google.android.material:material:1.3.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
+
+    implementation "androidx.datastore:datastore-preferences:1.0.0-rc01"
+
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation 'androidx.hilt:hilt-work:1.0.0-beta01'
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-beta01'
+
+    def retrofitVersion = '2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    def okhttpLoggingInterceptorVersion = '4.7.2'
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
+
+    implementation "androidx.multidex:multidex:2.0.1"
+
+    implementation "androidx.activity:activity-ktx:1.3.0-alpha05"
+    implementation "androidx.fragment:fragment-ktx:1.3.2"
+
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    def pagingVersion = '3.0.0-beta03'
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+
+    def glideVersion = "4.12.0"
+    implementation "com.github.bumptech.glide:glide:${glideVersion}"
+    kapt "com.github.bumptech.glide:compiler:${glideVersion}"
+
+    implementation "com.github.YarikSOffice:lingver:1.3.0"
+
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.android.play:core:1.10.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.9'
+
+
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
+
+
+    def roomVersion = '2.3.0-rc01'
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.3.0'
+
+    implementation 'com.sunmi:printerlibrary:1.0.13'
+    implementation 'com.google.zxing:core:3.4.0'
+
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+
+    implementation 'org.apache.commons:commons-text:1.9'
+
+    implementation 'me.pushy:sdk:1.0.70'
+
+    testImplementation "junit:junit:4.13.2"
+}

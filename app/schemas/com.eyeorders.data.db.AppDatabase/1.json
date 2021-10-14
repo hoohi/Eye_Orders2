@@ -1,0 +1,910 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "f8a8646cf74b24eada3484ca795cc625",
+    "entities": [
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `email` TEXT NOT NULL, `guid` TEXT NOT NULL, `channelId` TEXT NOT NULL, `blocked` INTEGER NOT NULL, `verified` INTEGER NOT NULL, `step` TEXT NOT NULL, `deviceToken` TEXT NOT NULL, `devicePlatform` TEXT, `dateCreated` INTEGER NOT NULL, `dateUpdated` INTEGER NOT NULL, `token` TEXT NOT NULL, `apiToken` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "guid",
+            "columnName": "guid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channelId",
+            "columnName": "channelId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "blocked",
+            "columnName": "blocked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verified",
+            "columnName": "verified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "step",
+            "columnName": "step",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceToken",
+            "columnName": "deviceToken",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "devicePlatform",
+            "columnName": "devicePlatform",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateCreated",
+            "columnName": "dateCreated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateUpdated",
+            "columnName": "dateUpdated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "token",
+            "columnName": "token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "apiToken",
+            "columnName": "apiToken",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UserRetailer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER, `companyName` TEXT, `companyNameArab` TEXT, `description` TEXT, `descriptionArab` TEXT, `rate` REAL, `companyCurrency` TEXT, `favorites` INTEGER, `canceledOrder` INTEGER, `imagePath` TEXT, `thumbPath` TEXT, `phoneNumber` TEXT, `mobileNumber` TEXT, `storeAddress` TEXT, `storeCategory` INTEGER, `brandLocation` INTEGER, `latitude` REAL, `longitude` REAL, `dateCreated` INTEGER, `dateUpdated` INTEGER, `monStart` TEXT, `monEnd` TEXT, `tueStart` TEXT, `tueEnd` TEXT, `wedStart` TEXT, `wedEnd` TEXT, `thuStart` TEXT, `thuEnd` TEXT, `friStart` TEXT, `friEnd` TEXT, `satStart` TEXT, `satEnd` TEXT, `sunStart` TEXT, `sunEnd` TEXT, `storeTimezone` TEXT, `deliveryStart` TEXT, `deliveryEnd` TEXT, `ownerFName` TEXT, `ownerLName` TEXT, `ownerAddress` TEXT, `ownerMobileNumber` TEXT, `ownerPhoneNumber` TEXT, `cardId` TEXT, `cardIdPath` TEXT, `cardIsVerified` INTEGER NOT NULL, `commActivity` TEXT, `commActivityPath` TEXT, `commActivityIsVerified` INTEGER NOT NULL, `commRegister` TEXT, `commRegisterPath` TEXT, `commRegisterIsVerified` INTEGER NOT NULL, `municipalLicense` TEXT, `municipalLicensePath` TEXT, `municipalLicenseIsVerified` INTEGER, `isFeatured` INTEGER NOT NULL, `featuredBannerPath` TEXT, `featuredBannerMobilePath` TEXT, `bannerImagePath` TEXT, `tasleemFee` REAL, `tasleemDiscountDelivery` REAL, `vendorPriority` TEXT, `bannerThumbImagePath` TEXT, `isStopOrder` INTEGER NOT NULL, `vendorSummaryDate` INTEGER, `mobileAdsMedium` TEXT, `mobileAdsSmall` TEXT, `sectionAdImagePath` TEXT, `featuredBannerAdOrdering` INTEGER, `zoneId` INTEGER, `displayType` TEXT, `tasleemZoneDeliveryDiscount` REAL, `isStoreOpen` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyName",
+            "columnName": "companyName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyNameArab",
+            "columnName": "companyNameArab",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "descriptionArab",
+            "columnName": "descriptionArab",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rate",
+            "columnName": "rate",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companyCurrency",
+            "columnName": "companyCurrency",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "favorites",
+            "columnName": "favorites",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "canceledOrder",
+            "columnName": "canceledOrder",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imagePath",
+            "columnName": "imagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumbPath",
+            "columnName": "thumbPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phoneNumber",
+            "columnName": "phoneNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobileNumber",
+            "columnName": "mobileNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "storeAddress",
+            "columnName": "storeAddress",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "storeCategory",
+            "columnName": "storeCategory",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "brandLocation",
+            "columnName": "brandLocation",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateCreated",
+            "columnName": "dateCreated",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateUpdated",
+            "columnName": "dateUpdated",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "monStart",
+            "columnName": "monStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "monEnd",
+            "columnName": "monEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tueStart",
+            "columnName": "tueStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tueEnd",
+            "columnName": "tueEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wedStart",
+            "columnName": "wedStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wedEnd",
+            "columnName": "wedEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thuStart",
+            "columnName": "thuStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thuEnd",
+            "columnName": "thuEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "friStart",
+            "columnName": "friStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "friEnd",
+            "columnName": "friEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "satStart",
+            "columnName": "satStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "satEnd",
+            "columnName": "satEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sunStart",
+            "columnName": "sunStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sunEnd",
+            "columnName": "sunEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "storeTimezone",
+            "columnName": "storeTimezone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deliveryStart",
+            "columnName": "deliveryStart",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deliveryEnd",
+            "columnName": "deliveryEnd",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ownerFName",
+            "columnName": "ownerFName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ownerLName",
+            "columnName": "ownerLName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ownerAddress",
+            "columnName": "ownerAddress",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ownerMobileNumber",
+            "columnName": "ownerMobileNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ownerPhoneNumber",
+            "columnName": "ownerPhoneNumber",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cardId",
+            "columnName": "cardId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cardIdPath",
+            "columnName": "cardIdPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cardIsVerified",
+            "columnName": "cardIsVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "commActivity",
+            "columnName": "commActivity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "commActivityPath",
+            "columnName": "commActivityPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "commActivityIsVerified",
+            "columnName": "commActivityIsVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "commRegister",
+            "columnName": "commRegister",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "commRegisterPath",
+            "columnName": "commRegisterPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "commRegisterIsVerified",
+            "columnName": "commRegisterIsVerified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "municipalLicense",
+            "columnName": "municipalLicense",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "municipalLicensePath",
+            "columnName": "municipalLicensePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "municipalLicenseIsVerified",
+            "columnName": "municipalLicenseIsVerified",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isFeatured",
+            "columnName": "isFeatured",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "featuredBannerPath",
+            "columnName": "featuredBannerPath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "featuredBannerMobilePath",
+            "columnName": "featuredBannerMobilePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bannerImagePath",
+            "columnName": "bannerImagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tasleemFee",
+            "columnName": "tasleemFee",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tasleemDiscountDelivery",
+            "columnName": "tasleemDiscountDelivery",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vendorPriority",
+            "columnName": "vendorPriority",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bannerThumbImagePath",
+            "columnName": "bannerThumbImagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isStopOrder",
+            "columnName": "isStopOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vendorSummaryDate",
+            "columnName": "vendorSummaryDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobileAdsMedium",
+            "columnName": "mobileAdsMedium",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobileAdsSmall",
+            "columnName": "mobileAdsSmall",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sectionAdImagePath",
+            "columnName": "sectionAdImagePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "featuredBannerAdOrdering",
+            "columnName": "featuredBannerAdOrdering",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "zoneId",
+            "columnName": "zoneId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "displayType",
+            "columnName": "displayType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tasleemZoneDeliveryDiscount",
+            "columnName": "tasleemZoneDeliveryDiscount",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isStoreOpen",
+            "columnName": "isStoreOpen",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "vendor_categories",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `title_ar` TEXT NOT NULL, `ordering` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titleArab",
+            "columnName": "title_ar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ordering",
+            "columnName": "ordering",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MenuProduct",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `titleArab` TEXT NOT NULL, `description` TEXT NOT NULL, `descriptionArab` TEXT NOT NULL, `rate` INTEGER NOT NULL, `vendorId` INTEGER NOT NULL, `categoryId` INTEGER NOT NULL, `subcategoryId` INTEGER NOT NULL, `favorites` INTEGER NOT NULL, `discountPercentage` INTEGER NOT NULL, `preparationTime` INTEGER NOT NULL, `currency` TEXT, `price` REAL NOT NULL, `inStock` INTEGER NOT NULL, `isRemoved` INTEGER NOT NULL, `isUnlimited` INTEGER NOT NULL, `dateCreated` INTEGER NOT NULL, `dateUpdated` INTEGER NOT NULL, `currentQuantity` INTEGER NOT NULL, `isDeleted` INTEGER NOT NULL, `category` TEXT NOT NULL, `categoryArab` TEXT NOT NULL, `subcategory` TEXT NOT NULL, `subcategoryArab` TEXT NOT NULL, `imagePath` TEXT NOT NULL, `images` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titleArab",
+            "columnName": "titleArab",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descriptionArab",
+            "columnName": "descriptionArab",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rate",
+            "columnName": "rate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vendorId",
+            "columnName": "vendorId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryId",
+            "columnName": "categoryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subcategoryId",
+            "columnName": "subcategoryId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "favorites",
+            "columnName": "favorites",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discountPercentage",
+            "columnName": "discountPercentage",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preparationTime",
+            "columnName": "preparationTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currency",
+            "columnName": "currency",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "inStock",
+            "columnName": "inStock",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isRemoved",
+            "columnName": "isRemoved",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isUnlimited",
+            "columnName": "isUnlimited",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateCreated",
+            "columnName": "dateCreated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateUpdated",
+            "columnName": "dateUpdated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentQuantity",
+            "columnName": "currentQuantity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDeleted",
+            "columnName": "isDeleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryArab",
+            "columnName": "categoryArab",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subcategory",
+            "columnName": "subcategory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subcategoryArab",
+            "columnName": "subcategoryArab",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagePath",
+            "columnName": "imagePath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "images",
+            "columnName": "images",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MenuProductRemoteKey",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nextPage` INTEGER, `prevPage` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nextPage",
+            "columnName": "nextPage",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prevPage",
+            "columnName": "prevPage",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "OrderResponse",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `customer` TEXT NOT NULL, `orderNum` INTEGER NOT NULL, `driver` TEXT NOT NULL, `status` TEXT NOT NULL, `deliveryType` TEXT NOT NULL, `totalPrice` REAL NOT NULL, `paymentMethod` TEXT NOT NULL, `dateCreated` INTEGER NOT NULL, `dateUpdated` TEXT NOT NULL, `products` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customer",
+            "columnName": "customer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderNum",
+            "columnName": "orderNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "driver",
+            "columnName": "driver",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deliveryType",
+            "columnName": "deliveryType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalPrice",
+            "columnName": "totalPrice",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "paymentMethod",
+            "columnName": "paymentMethod",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateCreated",
+            "columnName": "dateCreated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateUpdated",
+            "columnName": "dateUpdated",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "products",
+            "columnName": "products",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "OrdersRemoteKey",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `nextPage` INTEGER, `prevPage` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nextPage",
+            "columnName": "nextPage",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prevPage",
+            "columnName": "prevPage",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f8a8646cf74b24eada3484ca795cc625')"
+    ]
+  }
+}

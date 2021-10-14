@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/activeOrdersFragment">
+
+    <fragment
+        android:id="@+id/activeOrdersFragment"
+        android:name="com.eyeorders.screens.activeorders.ActiveOrdersFragment"
+        android:label="ActiveOrdersFragment"
+        tools:layout="@layout/fragment_active_orders">
+        <action
+            android:id="@+id/action_activeOrdersFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_activeOrdersFragment"
+        app:destination="@id/activeOrdersFragment" />
+
+    <fragment
+        android:id="@+id/recentOrdersFragment"
+        android:name="com.eyeorders.screens.recentorders.RecentOrdersFragment"
+        android:label="RecentOrdersFragment"
+        tools:layout="@layout/fragment_recent_orders" />
+
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.eyeorders.screens.orderdetail.OrderDetailFragment"
+        android:label="OrderDetailFragment"
+        tools:layout="@layout/fragment_order_detail">
+
+        <deepLink app:uri="www.tasleem.in/orders/{orderId}" />
+        <argument
+            android:name="orderId"
+            app:argType="integer" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_orderDetailFragment"
+        app:destination="@id/orderDetailFragment" />
+    <action
+        android:id="@+id/action_global_recentOrdersFragment"
+        app:destination="@id/recentOrdersFragment" />
+    <fragment
+        android:id="@+id/newOrderFragment"
+        android:name="com.eyeorders.screens.neworder.NewOrderFragment"
+        android:label="NewOrderFragment"
+        tools:layout="@layout/fragment_new_order">
+        <action
+            android:id="@+id/action_newOrderFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment"
+            app:popUpTo="@id/newOrderFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuManagementFragment"
+        android:name="com.eyeorders.screens.menumgmt.MenuManagementFragment"
+        android:label="MenuManagementFragment"
+        tools:layout="@layout/fragment_menu_mgmt" />
+
+    <fragment
+        android:id="@+id/workHoursFragment"
+        android:name="com.eyeorders.screens.workhours.WorkHoursFragment"
+        android:label="WorkHoursFragment"
+        tools:layout="@layout/fragment_work_hours" />
+
+    <action
+        android:id="@+id/action_global_menuManagementFragment"
+        app:destination="@id/menuManagementFragment" />
+    <dialog
+        android:id="@+id/storeStatusDialog"
+        android:name="com.eyeorders.screens.storestatus.StoreStatusDialog"
+        android:label="StoreStatusDialog"
+        tools:layout="@layout/dialog_store_status" />
+    <action
+        android:id="@+id/action_global_storeStatusDialog"
+        app:destination="@id/storeStatusDialog" />
+
+    <dialog
+        android:id="@+id/testConnectionDialog"
+        android:name="com.eyeorders.screens.testconnection.TestConnectionDialog"
+        android:label="TestConnectionDialog"
+        tools:layout="@layout/dialog_test_connection" />
+    <action
+        android:id="@+id/action_global_testConnectionDialog"
+        app:destination="@id/testConnectionDialog" />
+    <action
+        android:id="@+id/action_global_newOrderFragment"
+        app:destination="@id/newOrderFragment" />
+    <action
+        android:id="@+id/action_global_workHoursFragment"
+        app:destination="@id/workHoursFragment" />
+
+    <dialog
+        android:id="@+id/helpDialog"
+        android:name="com.eyeorders.screens.help.HelpDialog"
+        android:label="HelpDialog"
+        tools:layout="@layout/dialog_help" />
+    <action
+        android:id="@+id/action_global_helpDialog"
+        app:destination="@id/helpDialog" />
+
+</navigation>

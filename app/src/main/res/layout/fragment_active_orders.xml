@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_menu"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/title_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_active_orders"
+                    android:textAppearance="@style/TextAppearance.App.H3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/state_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/state_button"
+                    style="@style/Widget.App.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textColor="?colorOnPrimary"
+                    app:backgroundTint="?colorPrimaryDark"
+                    app:iconGravity="start"
+                    app:iconPadding="8dp"
+                    app:iconSize="@dimen/button_loading_radius"
+                    app:iconTint="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/title_text_view"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:icon="@drawable/point"
+                    tools:text="@string/state_open" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/new_label_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/order_title_nnew"
+                    android:textAppearance="@style/TextAppearance.App.H2"
+                    app:layout_constraintEnd_toStartOf="@id/new_count_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/new_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.App.Strong"
+                    android:textColor="?colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@id/new_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/new_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/new_label_text_view"
+                    tools:text="2" />
+
+
+                <com.eyeorders.util.customview.EmptyRecyclerView
+                    android:id="@+id/new_recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHeight_min="120dp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/new_label_text_view"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_active_new_order" />
+
+
+                <ImageView
+                    android:id="@+id/new_empty_img"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintBottom_toTopOf="@id/new_empty_text"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/new_label_text_view"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:srcCompat="@drawable/ic_active_orders" />
+
+                <TextView
+                    android:id="@+id/new_empty_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/loading"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    app:layout_constraintBottom_toTopOf="@id/new_retry_btn"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/new_empty_img" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_retry_btn"
+                    style="@style/Widget.App.Button.Outlined.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/retry_text"
+                    app:layout_constraintBottom_toTopOf="@id/accepted_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/new_empty_img"
+                    app:layout_constraintStart_toStartOf="@id/new_empty_img"
+                    app:layout_constraintTop_toBottomOf="@id/new_empty_text" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/new_orders_empty_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="new_empty_img,new_empty_text" />
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="new_recycler_view,new_retry_btn" />
+
+                <TextView
+                    android:id="@+id/accepted_label_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/order_title_accepted"
+                    android:textAppearance="@style/TextAppearance.App.H2"
+                    app:layout_constraintEnd_toStartOf="@id/accepted_count_text_view"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/barrier_new" />
+
+                <TextView
+                    android:id="@+id/accepted_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.App.Strong"
+                    android:textColor="?colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="@id/accepted_label_text_view"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toEndOf="@id/accepted_label_text_view"
+                    app:layout_constraintTop_toTopOf="@id/accepted_label_text_view"
+                    tools:text="2" />
+
+
+                <com.eyeorders.util.customview.EmptyRecyclerView
+                    android:id="@+id/accepted_recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/accepted_label_text_view"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_active_accepted_order" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/accepted_recycler_view"
+                    tools:ignore="UselessLeaf" />
+
+
+                <ImageView
+                    android:id="@+id/accepted_empty_img"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintBottom_toTopOf="@id/accepted_empty_text"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/accepted_label_text_view"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:srcCompat="@drawable/ic_active_orders" />
+
+                <TextView
+                    android:id="@+id/accepted_empty_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/loading"
+                    android:textAppearance="@style/TextAppearance.App.Body"
+                    app:layout_constraintBottom_toTopOf="@id/accepted_retry_btn"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@id/accepted_empty_img" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accepted_retry_btn"
+                    style="@style/Widget.App.Button.Outlined.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/retry_text"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                    app:layout_constraintEnd_toEndOf="@id/accepted_empty_img"
+                    app:layout_constraintStart_toStartOf="@id/accepted_empty_img"
+                    app:layout_constraintTop_toBottomOf="@id/accepted_empty_text" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/accepted_orders_empty_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="accepted_empty_img,accepted_empty_text" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.05" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.95" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
